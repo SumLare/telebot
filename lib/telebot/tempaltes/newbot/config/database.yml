@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 16
+
+development:
+  <<: *default
+  database: <%= config[:name].inspect %>_development
+
+test:
+  <<: *default
+  database: <%= config[:name].inspect %>_test
+
+production:
+  <<: *default
+  database: <%= config[:name].inspect %>_production
