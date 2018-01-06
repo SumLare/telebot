@@ -18,8 +18,10 @@ Gem::Specification.new do |s|
     f.match(%r{^(test|spec|features)/})
   end
   s.bindir        = "exe"
-  s.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  s.executables   = s.files.grep(%r{^exe/}) { |f| File.basename(f) }
   s.require_paths = ["lib"]
+
+  s.add_dependency 'thor'
 
   s.add_development_dependency "bundler", "~> 1.15"
   s.add_development_dependency "rake", "~> 10.0"
